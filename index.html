@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sri Kavi Beauty Parlour | Home</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS (CDN build) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cream: "#fff9f5",
+              blush: "#e8b4b8",
+              "blush-dark": "#d99aa0",
+              plum: "#3b1f2b",
+              "plum-light": "#5a2f42",
+              gold: "#c9a66b",
+              charcoal: "#2a2a2a",
+            },
+            fontFamily: {
+              display: ["Playfair Display", "serif"],
+              body: ["Poppins", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body class="font-body bg-cream text-charcoal">
+    <!-- =========================================================
+         NAVBAR
+         ========================================================= -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-cream/95 backdrop-blur shadow-sm">
+      <nav class="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-20">
+        <!-- Logo -->
+        <a href="index.html" class="flex flex-col leading-tight">
+          <span class="font-display text-2xl md:text-3xl text-plum tracking-wide">Sri Kavi</span>
+          <span class="text-xs md:text-sm tracking-[0.3em] text-gold uppercase">Beauty Parlour</span>
+        </a>
+
+        <!-- Desktop links -->
+        <ul class="hidden md:flex items-center gap-10 text-sm font-medium text-plum">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <!-- CTA button (desktop) -->
+        <a
+          href="contact.html"
+          class="hidden md:inline-block btn-primary px-6 py-2.5 rounded-full text-sm font-semibold tracking-wide"
+        >
+          Book Appointment
+        </a>
+
+        <!-- Mobile menu toggle -->
+        <button
+          id="menu-toggle"
+          class="md:hidden text-plum focus:outline-none"
+          aria-label="Toggle navigation menu"
+        >
+          <svg id="icon-open" class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+          </svg>
+          <svg id="icon-close" class="w-8 h-8 hidden" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </nav>
+
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="md:hidden bg-cream border-t border-blush/40">
+        <ul class="flex flex-col px-6 py-4 gap-4 text-plum font-medium">
+          <li><a href="index.html" class="block py-1">Home</a></li>
+          <li><a href="about.html" class="block py-1">About</a></li>
+          <li><a href="services.html" class="block py-1">Services</a></li>
+          <li><a href="gallery.html" class="block py-1">Gallery</a></li>
+          <li><a href="contact.html" class="block py-1">Contact</a></li>
+          <li>
+            <a href="contact.html" class="btn-primary inline-block px-6 py-2.5 rounded-full text-sm font-semibold mt-2">
+              Book Appointment
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- =========================================================
+         HERO
+         ========================================================= -->
+    <section class="relative h-screen min-h-[600px] flex items-center">
+      <img
+        src="images/salon-interior.svg"
+        alt="Elegant salon interior"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 hero-overlay"></div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 w-full">
+        <div class="max-w-xl">
+          <p class="text-gold uppercase tracking-[0.35em] text-xs md:text-sm mb-4">Coimbatore's Trusted Beauty Studio</p>
+          <h1 class="font-display text-4xl sm:text-5xl md:text-6xl text-cream leading-tight mb-6">
+            Where Beauty Meets Elegance
+          </h1>
+          <p class="text-cream/85 text-base md:text-lg mb-8 leading-relaxed">
+            From bridal makeovers to everyday skin and hair care, Sri Kavi Beauty Parlour brings
+            skilled hands, quality products and a calm, welcoming space to every visit.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="contact.html" class="btn-primary px-8 py-3.5 rounded-full font-semibold text-sm tracking-wide">
+              Book Your Appointment
+            </a>
+            <a href="services.html" class="btn-outline px-8 py-3.5 rounded-full font-semibold text-sm tracking-wide">
+              Explore Services
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         HIGHLIGHTS STRIP
+         ========================================================= -->
+    <section class="bg-plum text-cream">
+      <div class="max-w-7xl mx-auto px-6 lg:px-10 py-10 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <p class="font-display text-3xl md:text-4xl text-gold">12+</p>
+          <p class="text-xs md:text-sm uppercase tracking-widest mt-2 text-cream/80">Years of Service</p>
+        </div>
+        <div>
+          <p class="font-display text-3xl md:text-4xl text-gold">6,000+</p>
+          <p class="text-xs md:text-sm uppercase tracking-widest mt-2 text-cream/80">Happy Clients</p>
+        </div>
+        <div>
+          <p class="font-display text-3xl md:text-4xl text-gold">15+</p>
+          <p class="text-xs md:text-sm uppercase tracking-widest mt-2 text-cream/80">Services Offered</p>
+        </div>
+        <div>
+          <p class="font-display text-3xl md:text-4xl text-gold">8</p>
+          <p class="text-xs md:text-sm uppercase tracking-widest mt-2 text-cream/80">Expert Stylists</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         FEATURED SERVICES
+         ========================================================= -->
+    <section class="max-w-7xl mx-auto px-6 lg:px-10 py-20">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <p class="text-gold uppercase tracking-[0.3em] text-xs mb-3">What We Do</p>
+        <h2 class="font-display text-3xl md:text-4xl text-plum mb-4">Signature Services</h2>
+        <p class="text-charcoal/70">
+          A glimpse of what awaits you at Sri Kavi. Visit our services page for the complete list
+          and pricing.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Card 1 -->
+        <div class="service-card bg-white rounded-2xl overflow-hidden shadow-md">
+          <div class="overflow-hidden h-48">
+            <img
+              src="images/facial.svg"
+              alt="Facial treatment"
+              class="service-image w-full h-full object-cover"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="font-display text-xl text-plum mb-2">Facial &amp; Skin Care</h3>
+            <p class="text-sm text-charcoal/70 leading-relaxed">
+              Deep-cleansing facials tailored to your skin type for a natural, healthy glow.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="service-card bg-white rounded-2xl overflow-hidden shadow-md">
+          <div class="overflow-hidden h-48">
+            <img
+              src="images/hair-styling.svg"
+              alt="Hair styling"
+              class="service-image w-full h-full object-cover"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="font-display text-xl text-plum mb-2">Hair Styling</h3>
+            <p class="text-sm text-charcoal/70 leading-relaxed">
+              Cuts, blow-drys and styling for every occasion, from casual days to big events.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="service-card bg-white rounded-2xl overflow-hidden shadow-md">
+          <div class="overflow-hidden h-48">
+            <img
+              src="images/bridal.svg"
+              alt="Bridal makeup"
+              class="service-image w-full h-full object-cover"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="font-display text-xl text-plum mb-2">Bridal Makeup</h3>
+            <p class="text-sm text-charcoal/70 leading-relaxed">
+              Complete bridal packages so you look and feel your most radiant self.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="service-card bg-white rounded-2xl overflow-hidden shadow-md">
+          <div class="overflow-hidden h-48">
+            <img
+              src="images/nail-art.svg"
+              alt="Manicure"
+              class="service-image w-full h-full object-cover"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="font-display text-xl text-plum mb-2">Manicure &amp; Pedicure</h3>
+            <p class="text-sm text-charcoal/70 leading-relaxed">
+              Relaxing hand and foot care with clean, precise finishing every time.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a
+          href="services.html"
+          class="inline-block border border-plum text-plum px-8 py-3 rounded-full text-sm font-semibold hover:bg-plum hover:text-cream transition-colors"
+        >
+          View All Services
+        </a>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         WHY CHOOSE US
+         ========================================================= -->
+    <section class="bg-blush/25">
+      <div class="max-w-7xl mx-auto px-6 lg:px-10 py-20 grid md:grid-cols-2 gap-12 items-center">
+        <div class="rounded-2xl overflow-hidden shadow-lg">
+          <img
+            src="images/portrait-stylist.svg"
+            alt="Stylist at work in the salon"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div>
+          <p class="text-gold uppercase tracking-[0.3em] text-xs mb-3">Why Choose Us</p>
+          <h2 class="font-display text-3xl md:text-4xl text-plum mb-6">Care and Craft in Every Visit</h2>
+          <ul class="space-y-5">
+            <li class="flex gap-4">
+              <span class="mt-1 w-2.5 h-2.5 rounded-full bg-gold shrink-0"></span>
+              <p class="text-charcoal/80"><span class="font-semibold text-plum">Trained professionals</span> with years of hands-on experience across hair, skin and makeup.</p>
+            </li>
+            <li class="flex gap-4">
+              <span class="mt-1 w-2.5 h-2.5 rounded-full bg-gold shrink-0"></span>
+              <p class="text-charcoal/80"><span class="font-semibold text-plum">Quality products</span> chosen for gentle, lasting results on every skin and hair type.</p>
+            </li>
+            <li class="flex gap-4">
+              <span class="mt-1 w-2.5 h-2.5 rounded-full bg-gold shrink-0"></span>
+              <p class="text-charcoal/80"><span class="font-semibold text-plum">Hygienic, calm space</span> designed so you can relax fully during your appointment.</p>
+            </li>
+            <li class="flex gap-4">
+              <span class="mt-1 w-2.5 h-2.5 rounded-full bg-gold shrink-0"></span>
+              <p class="text-charcoal/80"><span class="font-semibold text-plum">Affordable packages</span> for daily care, festive looks and bridal occasions alike.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         TESTIMONIALS
+         ========================================================= -->
+    <section class="max-w-7xl mx-auto px-6 lg:px-10 py-20">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <p class="text-gold uppercase tracking-[0.3em] text-xs mb-3">Client Stories</p>
+        <h2 class="font-display text-3xl md:text-4xl text-plum">What Our Clients Say</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl p-8 shadow-md">
+          <p class="text-charcoal/80 leading-relaxed mb-6">
+            "My bridal makeup stayed perfect for the entire wedding day. The team understood
+            exactly what I wanted and made me feel completely at ease."
+          </p>
+          <p class="font-display text-plum">Divya R.</p>
+          <p class="text-xs text-charcoal/50 uppercase tracking-widest">Bridal Client</p>
+        </div>
+        <div class="bg-white rounded-2xl p-8 shadow-md">
+          <p class="text-charcoal/80 leading-relaxed mb-6">
+            "I have been coming here for my monthly facials for two years. The staff is gentle,
+            professional and the results always show."
+          </p>
+          <p class="font-display text-plum">Meena S.</p>
+          <p class="text-xs text-charcoal/50 uppercase tracking-widest">Regular Client</p>
+        </div>
+        <div class="bg-white rounded-2xl p-8 shadow-md">
+          <p class="text-charcoal/80 leading-relaxed mb-6">
+            "Great haircut, honest advice about what would suit my face shape, and a genuinely
+            warm welcome every single time."
+          </p>
+          <p class="font-display text-plum">Priya K.</p>
+          <p class="text-xs text-charcoal/50 uppercase tracking-widest">Hair Care Client</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         GALLERY PREVIEW
+         ========================================================= -->
+    <section class="bg-plum-light">
+      <div class="max-w-7xl mx-auto px-6 lg:px-10 py-20">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <p class="text-gold uppercase tracking-[0.3em] text-xs mb-3">Our Work</p>
+          <h2 class="font-display text-3xl md:text-4xl text-cream">A Look Inside Sri Kavi</h2>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="gallery-item rounded-xl overflow-hidden h-48">
+            <img src="images/haircut.svg" alt="Hair cutting session" class="w-full h-full object-cover" />
+          </div>
+          <div class="gallery-item rounded-xl overflow-hidden h-48">
+            <img src="images/makeup.svg" alt="Makeup application" class="w-full h-full object-cover" />
+          </div>
+          <div class="gallery-item rounded-xl overflow-hidden h-48">
+            <img src="images/mehndi.svg" alt="Mehendi design" class="w-full h-full object-cover" />
+          </div>
+          <div class="gallery-item rounded-xl overflow-hidden h-48">
+            <img src="images/spa.svg" alt="Spa treatment" class="w-full h-full object-cover" />
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <a
+            href="gallery.html"
+            class="inline-block btn-outline border border-cream px-8 py-3 rounded-full text-sm font-semibold"
+          >
+            View Full Gallery
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         CTA BANNER
+         ========================================================= -->
+    <section class="max-w-5xl mx-auto px-6 lg:px-10 py-20 text-center">
+      <h2 class="font-display text-3xl md:text-4xl text-plum mb-5">Ready for Your Next Appointment?</h2>
+      <p class="text-charcoal/70 max-w-xl mx-auto mb-8">
+        Call us or send a message and we will help you find the right time and service for your
+        needs.
+      </p>
+      <a href="contact.html" class="btn-primary inline-block px-10 py-4 rounded-full font-semibold tracking-wide">
+        Book Appointment
+      </a>
+    </section>
+
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+    <footer class="bg-plum text-cream/80">
+      <div class="max-w-7xl mx-auto px-6 lg:px-10 py-14 grid md:grid-cols-4 gap-10">
+        <div>
+          <span class="font-display text-2xl text-cream block mb-3">Sri Kavi</span>
+          <p class="text-sm leading-relaxed">
+            A neighbourhood beauty parlour in Coimbatore, dedicated to honest, quality care for
+            hair, skin and beauty.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-cream font-semibold mb-4 tracking-wide">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="index.html" class="hover:text-gold transition-colors">Home</a></li>
+            <li><a href="about.html" class="hover:text-gold transition-colors">About Us</a></li>
+            <li><a href="services.html" class="hover:text-gold transition-colors">Services</a></li>
+            <li><a href="gallery.html" class="hover:text-gold transition-colors">Gallery</a></li>
+            <li><a href="contact.html" class="hover:text-gold transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-cream font-semibold mb-4 tracking-wide">Working Hours</h4>
+          <ul class="space-y-2 text-sm">
+            <li>Monday – Saturday: 9:30 AM – 8:00 PM</li>
+            <li>Sunday: 10:00 AM – 6:00 PM</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-cream font-semibold mb-4 tracking-wide">Contact</h4>
+          <ul class="space-y-2 text-sm">
+            <li>123 Race Course Road, Coimbatore, Tamil Nadu</li>
+            <li>+91 98765 43210</li>
+            <li>hello@srikavibeauty.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-cream/15 py-6 text-center text-xs text-cream/60">
+        &copy; 2026 Sri Kavi Beauty Parlour. All rights reserved.
+      </div>
+    </footer>
+
+    <!-- =========================================================
+         SCRIPTS
+         ========================================================= -->
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const iconOpen = document.getElementById("icon-open");
+      const iconClose = document.getElementById("icon-close");
+
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("open");
+        iconOpen.classList.toggle("hidden");
+        iconClose.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>

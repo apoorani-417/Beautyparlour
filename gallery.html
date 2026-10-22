@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sri Kavi Beauty Parlour | Gallery</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cream: "#fff9f5",
+              blush: "#e8b4b8",
+              "blush-dark": "#d99aa0",
+              plum: "#3b1f2b",
+              "plum-light": "#5a2f42",
+              gold: "#c9a66b",
+              charcoal: "#2a2a2a",
+            },
+            fontFamily: {
+              display: ["Playfair Display", "serif"],
+              body: ["Poppins", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body class="font-body bg-cream text-charcoal">
+    <!-- =========================================================
+         NAVBAR
+         ========================================================= -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-cream/95 backdrop-blur shadow-sm">
+      <nav class="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-20">
+        <a href="index.html" class="flex flex-col leading-tight">
+          <span class="font-display text-2xl md:text-3xl text-plum tracking-wide">Sri Kavi</span>
+          <span class="text-xs md:text-sm tracking-[0.3em] text-gold uppercase">Beauty Parlour</span>
+        </a>
+
+        <ul class="hidden md:flex items-center gap-10 text-sm font-medium text-plum">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <a
+          href="contact.html"
+          class="hidden md:inline-block btn-primary px-6 py-2.5 rounded-full text-sm font-semibold tracking-wide"
+        >
+          Book Appointment
+        </a>
+
+        <button id="menu-toggle" class="md:hidden text-plum focus:outline-none" aria-label="Toggle navigation menu">
+          <svg id="icon-open" class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+          </svg>
+          <svg id="icon-close" class="w-8 h-8 hidden" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </nav>
+
+      <div id="mobile-menu" class="md:hidden bg-cream border-t border-blush/40">
+        <ul class="flex flex-col px-6 py-4 gap-4 text-plum font-medium">
+          <li><a href="index.html" class="block py-1">Home</a></li>
+          <li><a href="about.html" class="block py-1">About</a></li>
+          <li><a href="services.html" class="block py-1">Services</a></li>
+          <li><a href="gallery.html" class="block py-1">Gallery</a></li>
+          <li><a href="contact.html" class="block py-1">Contact</a></li>
+          <li>
+            <a href="contact.html" class="btn-primary inline-block px-6 py-2.5 rounded-full text-sm font-semibold mt-2">
+              Book Appointment
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- =========================================================
+         PAGE HEADER
+         ========================================================= -->
+    <section class="relative h-72 flex items-center justify-center">
+      <img
+        src="images/glam.svg"
+        alt="Sri Kavi Beauty Parlour gallery"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 page-header-overlay"></div>
+      <div class="relative z-10 text-center px-6">
+        <h1 class="font-display text-4xl md:text-5xl text-cream mb-3">Our Gallery</h1>
+        <p class="text-cream/80 text-sm tracking-widest uppercase">Home / Gallery</p>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         FILTER TABS
+         ========================================================= -->
+    <section class="max-w-7xl mx-auto px-6 lg:px-10 pt-16">
+      <div class="flex flex-wrap justify-center gap-3 mb-12">
+        <button class="filter-btn active px-6 py-2.5 rounded-full text-sm font-semibold border border-plum text-plum" data-filter="all">
+          All
+        </button>
+        <button class="filter-btn px-6 py-2.5 rounded-full text-sm font-semibold border border-plum text-plum" data-filter="hair">
+          Hair
+        </button>
+        <button class="filter-btn px-6 py-2.5 rounded-full text-sm font-semibold border border-plum text-plum" data-filter="makeup">
+          Makeup
+        </button>
+        <button class="filter-btn px-6 py-2.5 rounded-full text-sm font-semibold border border-plum text-plum" data-filter="bridal">
+          Bridal
+        </button>
+        <button class="filter-btn px-6 py-2.5 rounded-full text-sm font-semibold border border-plum text-plum" data-filter="nails">
+          Nail Art
+        </button>
+        <button class="filter-btn px-6 py-2.5 rounded-full text-sm font-semibold border border-plum text-plum" data-filter="studio">
+          Studio
+        </button>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         GALLERY GRID
+         ========================================================= -->
+    <section class="max-w-7xl mx-auto px-6 lg:px-10 pb-20">
+      <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+        <div class="gallery-item relative rounded-xl h-64" data-category="hair">
+          <img src="images/haircut.svg" alt="Hair cutting" class="w-full h-full object-cover rounded-xl" />
+          <div class="gallery-caption absolute inset-0 bg-plum/60 rounded-xl flex items-end p-4">
+            <p class="text-cream text-sm font-medium">Precision Haircut</p>
+          </div>
+        </div>
+
+        <div class="gallery-item relative rounded-xl h-64" data-category="makeup">
+          <img src="images/makeup.svg" alt="Makeup application" class="w-full h-full object-cover rounded-xl" />
+          <div class="gallery-caption absolute inset-0 bg-plum/60 rounded-xl flex items-end p-4">
+            <p class="text-cream text-sm font-medium">Everyday Glam Makeup</p>
+          </div>
+        </div>
+
+        <div class="gallery-item relative rounded-xl h-64" data-category="bridal">
+          <img src="images/bridal.svg" alt="Bridal look" class="w-full h-full object-cover rounded-xl" />
+          <div class="gallery-caption absolute inset-0 bg-plum/60 rounded-xl flex items-end p-4">
+            <p class="text-cream text-sm font-medium">Bridal Transformation</p>
+          </div>
+        </div>
+
+        <div class="gallery-item relative rounded-xl h-64" data-category="nails">
+          <img src="images/nail-art.svg" alt="Nail art" class="w-full h-full object-cover rounded-xl" />
+          <div class="gallery-caption absolute inset-0 bg-plum/60 rounded-xl flex items-end p-4">
+            <p class="text-cream text-sm font-medium">Nail Art Design</p>
+          </div>
+        </div>
+
+        <div class="gallery-item relative rounded-xl h-64" data-category="studio">
+          <img src="images/salon-interior.svg" alt="Salon interior" class="w-full h-full object-cover rounded-xl" />
+          <div class="gallery-caption absolute inset-0 bg-plum/60 rounded-xl flex items-end p-4">
+            <p class="text-cream text-sm font-medium">Our Studio Space</p>
+          </div>
+        </div>
+
+        <div class="gallery-item relative rounded-xl h-64" data-category="hair">
+          <img src="images/hair-color.svg" alt="Hair coloring" class="w-full h-full object-cover rounded-xl" />
+          <div class="gallery-caption absolute inset-0 bg-plum/60 rounded-xl flex items-end p-4">
+            <p class="text-cream text-sm font-medium">Fresh Hair Colour</p>
+          </div>
+        </div>
+
+        <div class="gallery-item relative rounded-xl h-64" data-category="makeup">
+          <img src="images/mehndi.svg" alt="Mehendi design" class="w-full h-full object-cover rounded-xl" />
+          <div class="gallery-caption absolute inset-0 bg-plum/60 rounded-xl flex items-end p-4">
+            <p class="text-cream text-sm font-medium">Festive Mehendi</p>
+          </div>
+        </div>
+
+        <div class="gallery-item relative rounded-xl h-64" data-category="bridal">
+          <img src="images/bridal-jewelry.svg" alt="Bridal styling" class="w-full h-full object-cover rounded-xl" />
+          <div class="gallery-caption absolute inset-0 bg-plum/60 rounded-xl flex items-end p-4">
+            <p class="text-cream text-sm font-medium">Complete Bridal Styling</p>
+          </div>
+        </div>
+
+        <div class="gallery-item relative rounded-xl h-64" data-category="nails">
+          <img src="images/pedicure.svg" alt="Pedicure" class="w-full h-full object-cover rounded-xl" />
+          <div class="gallery-caption absolute inset-0 bg-plum/60 rounded-xl flex items-end p-4">
+            <p class="text-cream text-sm font-medium">Relaxing Pedicure</p>
+          </div>
+        </div>
+
+        <div class="gallery-item relative rounded-xl h-64" data-category="studio">
+          <img src="images/spa.svg" alt="Spa corner" class="w-full h-full object-cover rounded-xl" />
+          <div class="gallery-caption absolute inset-0 bg-plum/60 rounded-xl flex items-end p-4">
+            <p class="text-cream text-sm font-medium">Relaxation Corner</p>
+          </div>
+        </div>
+
+        <div class="gallery-item relative rounded-xl h-64" data-category="hair">
+          <img src="images/hair-spa.svg" alt="Hair spa" class="w-full h-full object-cover rounded-xl" />
+          <div class="gallery-caption absolute inset-0 bg-plum/60 rounded-xl flex items-end p-4">
+            <p class="text-cream text-sm font-medium">Nourishing Hair Spa</p>
+          </div>
+        </div>
+
+        <div class="gallery-item relative rounded-xl h-64" data-category="makeup">
+          <img src="images/party-makeup.svg" alt="Party makeup" class="w-full h-full object-cover rounded-xl" />
+          <div class="gallery-caption absolute inset-0 bg-plum/60 rounded-xl flex items-end p-4">
+            <p class="text-cream text-sm font-medium">Party-Ready Look</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         CTA BANNER
+         ========================================================= -->
+    <section class="bg-plum">
+      <div class="max-w-5xl mx-auto px-6 lg:px-10 py-16 text-center">
+        <h2 class="font-display text-3xl md:text-4xl text-cream mb-5">Like What You See?</h2>
+        <p class="text-cream/75 max-w-xl mx-auto mb-8">
+          Book your appointment today and let us create a look you will love just as much.
+        </p>
+        <a href="contact.html" class="btn-primary inline-block px-10 py-4 rounded-full font-semibold tracking-wide">
+          Book Appointment
+        </a>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+    <footer class="bg-plum text-cream/80">
+      <div class="max-w-7xl mx-auto px-6 lg:px-10 py-14 grid md:grid-cols-4 gap-10">
+        <div>
+          <span class="font-display text-2xl text-cream block mb-3">Sri Kavi</span>
+          <p class="text-sm leading-relaxed">
+            A neighbourhood beauty parlour in Coimbatore, dedicated to honest, quality care for
+            hair, skin and beauty.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-cream font-semibold mb-4 tracking-wide">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="index.html" class="hover:text-gold transition-colors">Home</a></li>
+            <li><a href="about.html" class="hover:text-gold transition-colors">About Us</a></li>
+            <li><a href="services.html" class="hover:text-gold transition-colors">Services</a></li>
+            <li><a href="gallery.html" class="hover:text-gold transition-colors">Gallery</a></li>
+            <li><a href="contact.html" class="hover:text-gold transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-cream font-semibold mb-4 tracking-wide">Working Hours</h4>
+          <ul class="space-y-2 text-sm">
+            <li>Monday – Saturday: 9:30 AM – 8:00 PM</li>
+            <li>Sunday: 10:00 AM – 6:00 PM</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-cream font-semibold mb-4 tracking-wide">Contact</h4>
+          <ul class="space-y-2 text-sm">
+            <li>123 Race Course Road, Coimbatore, Tamil Nadu</li>
+            <li>+91 98765 43210</li>
+            <li>hello@srikavibeauty.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-cream/15 py-6 text-center text-xs text-cream/60">
+        &copy; 2026 Sri Kavi Beauty Parlour. All rights reserved.
+      </div>
+    </footer>
+
+    <!-- =========================================================
+         SCRIPTS
+         ========================================================= -->
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const iconOpen = document.getElementById("icon-open");
+      const iconClose = document.getElementById("icon-close");
+
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("open");
+        iconOpen.classList.toggle("hidden");
+        iconClose.classList.toggle("hidden");
+      });
+
+      // Gallery filtering
+      const filterButtons = document.querySelectorAll(".filter-btn");
+      const galleryItems = document.querySelectorAll("#gallery-grid .gallery-item");
+
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          filterButtons.forEach((btn) => btn.classList.remove("active"));
+          button.classList.add("active");
+
+          const filter = button.getAttribute("data-filter");
+
+          galleryItems.forEach((item) => {
+            const category = item.getAttribute("data-category");
+            if (filter === "all" || filter === category) {
+              item.style.display = "block";
+            } else {
+              item.style.display = "none";
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

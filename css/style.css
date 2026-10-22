@@ -1,0 +1,198 @@
+/* =========================================================
+   Sri Kavi Beauty Parlour — custom stylesheet
+   Works alongside the Tailwind CDN build loaded on every page.
+   ========================================================= */
+
+:root {
+  --color-cream: #fff9f5;
+  --color-blush: #e8b4b8;
+  --color-blush-dark: #d99aa0;
+  --color-plum: #3b1f2b;
+  --color-plum-light: #5a2f42;
+  --color-gold: #c9a66b;
+  --color-charcoal: #2a2a2a;
+}
+
+/* -----------------------------------------------------
+   Base
+   ----------------------------------------------------- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--color-charcoal);
+  background-color: var(--color-cream);
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-display {
+  font-family: "Playfair Display", serif;
+}
+
+/* -----------------------------------------------------
+   Navbar underline animation
+   ----------------------------------------------------- */
+
+.nav-link {
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--color-gold);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: var(--color-gold);
+}
+
+/* -----------------------------------------------------
+   Mobile menu
+   ----------------------------------------------------- */
+
+#mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+#mobile-menu.open {
+  max-height: 480px;
+}
+
+/* -----------------------------------------------------
+   Hero
+   ----------------------------------------------------- */
+
+.hero-overlay {
+  background: linear-gradient(
+    120deg,
+    rgba(59, 31, 43, 0.82) 0%,
+    rgba(59, 31, 43, 0.55) 55%,
+    rgba(59, 31, 43, 0.25) 100%
+  );
+}
+
+/* -----------------------------------------------------
+   Page header banner (About / Services / Gallery / Contact)
+   ----------------------------------------------------- */
+
+.page-header-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(59, 31, 43, 0.75),
+    rgba(59, 31, 43, 0.75)
+  );
+}
+
+/* -----------------------------------------------------
+   Service & gallery cards
+   ----------------------------------------------------- */
+
+.service-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 30px -12px rgba(59, 31, 43, 0.25);
+}
+
+.service-card .service-image {
+  transition: transform 0.6s ease;
+}
+
+.service-card:hover .service-image {
+  transform: scale(1.08);
+}
+
+.gallery-item {
+  overflow: hidden;
+}
+
+.gallery-item img {
+  transition: transform 0.6s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-caption {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-caption {
+  opacity: 1;
+}
+
+/* -----------------------------------------------------
+   Buttons
+   ----------------------------------------------------- */
+
+.btn-primary {
+  background-color: var(--color-gold);
+  color: var(--color-plum);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-plum);
+  color: var(--color-cream);
+}
+
+.btn-outline {
+  border: 1px solid var(--color-cream);
+  color: var(--color-cream);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline:hover {
+  background-color: var(--color-cream);
+  color: var(--color-plum);
+}
+
+/* -----------------------------------------------------
+   Gallery filter buttons
+   ----------------------------------------------------- */
+
+.filter-btn.active {
+  background-color: var(--color-plum);
+  color: var(--color-cream);
+}
+
+/* -----------------------------------------------------
+   Scrollbar (webkit only, purely cosmetic)
+   ----------------------------------------------------- */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-blush);
+  border-radius: 999px;
+}

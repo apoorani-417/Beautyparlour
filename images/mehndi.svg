@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1f7"/><stop offset="0.55" stop-color="#f7d8e8"/><stop offset="1" stop-color="#d8b4cf"/></linearGradient><radialGradient id="r"><stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs>
+<rect width="1200" height="800" fill="url(#g)"/><circle cx="150" cy="130" r="180" fill="url(#r)"/><circle cx="1060" cy="690" r="260" fill="url(#r)"/>
+<rect x="85" y="90" width="1030" height="620" rx="38" fill="#ffffff" fill-opacity=".42" stroke="#ffffff" stroke-opacity=".7" stroke-width="4"/>
+<circle cx="600" cy="300" r="112" fill="#fff" fill-opacity=".8"/><text x="600" y="335" text-anchor="middle" font-size="105" font-family="DejaVu Sans" fill="#9b547b">❧</text>
+<text x="600" y="500" text-anchor="middle" font-size="54" font-family="DejaVu Sans, sans-serif" font-weight="700" fill="#54233f">Mehendi Design</text>
+<text x="600" y="560" text-anchor="middle" font-size="27" font-family="DejaVu Sans, sans-serif" fill="#74465f">Traditional henna design</text>
+<text x="600" y="650" text-anchor="middle" font-size="24" font-family="DejaVu Sans, sans-serif" letter-spacing="5" fill="#9b547b">SRI KAVI BEAUTY PARLOUR</text>
+</svg>
